@@ -1,716 +1,1120 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>AI Future Educator | AI·SW 교육 전문가</title>
-
-<link href="https://cdn.jsdelivr.net/npm/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
-
-<style>
-
-:root {
-    --navy:#0B1120;
-    --blue:#2563EB;
-    --purple:#8B5CF6;
-    --gold:#F59E0B;
-    --white:#F8FAFC;
-    --text:#1E293B;
-}
-
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-
-body{
-    font-family:Pretendard, sans-serif;
-    background:var(--white);
-    color:var(--text);
-    line-height:1.7;
-}
-
-
-.container{
-    max-width:1200px;
-    margin:auto;
-    padding:0 30px;
-}
-
-
-/* HEADER */
-
-header{
-
-    position:fixed;
-    top:20px;
-    left:50%;
-    transform:translateX(-50%);
-    width:90%;
-    z-index:100;
-
-    background:rgba(255,255,255,.75);
-    backdrop-filter:blur(20px);
-
-    border-radius:50px;
-    padding:18px 35px;
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-}
-
-
-.logo{
-    font-weight:800;
-    color:var(--blue);
-}
-
-
-nav a{
-
-    margin-left:25px;
-    text-decoration:none;
-    color:#334155;
-    font-size:15px;
-
-}
-
-
-/* HERO */
-
-.hero{
-
-    min-height:100vh;
-
-    background:
-    radial-gradient(circle at top right,#2563eb55,transparent 40%),
-    linear-gradient(135deg,#0B1120,#111827);
-
-    color:white;
-
-    display:flex;
-    align-items:center;
-
-}
-
-
-.hero h1{
-
-    font-size:70px;
-    line-height:1.2;
-
-}
-
-
-.hero span{
-
-    color:#60A5FA;
-
-}
-
-
-.hero p{
-
-    font-size:22px;
-    margin:30px 0;
-
-}
-
-
-.badges{
-
-    display:flex;
-    gap:15px;
-    flex-wrap:wrap;
-
-}
-
-
-.badge{
-
-    padding:12px 22px;
-    border-radius:50px;
-    background:#ffffff22;
-    border:1px solid #ffffff33;
-
-}
-
-
-.btn{
-
-    display:inline-block;
-
-    margin-top:35px;
-
-    padding:16px 35px;
-
-    background:var(--blue);
-
-    color:white;
-
-    border-radius:50px;
-
-    text-decoration:none;
-
-}
-
-
-/* SECTION */
-
-section{
-
-    padding:100px 0;
-
-}
-
-
-.title{
-
-    text-align:center;
-
-    font-size:42px;
-
-    margin-bottom:60px;
-
-}
-
-
-/* ABOUT */
-
-.about{
-
-    text-align:center;
-
-    max-width:850px;
-
-    margin:auto;
-
-    font-size:20px;
-
-}
-
-
-/* CARDS */
-
-
-.cards{
-
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:30px;
-
-}
-
-
-.card{
-
-background:white;
-
-padding:35px;
-
-border-radius:25px;
-
-box-shadow:0 20px 40px #00000012;
-
-transition:.3s;
-
-}
-
-
-.card:hover{
-
-transform:translateY(-10px);
-
-}
-
-
-.card h3{
-
-color:var(--blue);
-
-margin-bottom:15px;
-
-}
-
-
-
-/* TIMELINE */
-
-
-.timeline{
-
-border-left:4px solid var(--blue);
-
-padding-left:40px;
-
-}
-
-
-.item{
-
-margin-bottom:50px;
-
-}
-
-
-.item h3{
-
-color:var(--purple);
-
-}
-
-
-
-/* SCHOOL */
-
-.school{
-
-background:#fff;
-
-border-radius:30px;
-
-padding:40px;
-
-box-shadow:0 15px 40px #0001;
-
-}
-
-
-/* BOOK */
-
-.book{
-
-background:linear-gradient(135deg,#2563eb,#8b5cf6);
-
-color:white;
-
-padding:60px;
-
-border-radius:40px;
-
-text-align:center;
-
-}
-
-
-/* FOOTER */
-
-footer{
-
-background:#0B1120;
-
-color:white;
-
-padding:50px;
-
-text-align:center;
-
-}
-
-
-
-@media(max-width:700px){
-
-.hero h1{
-font-size:42px;
-}
-
-nav{
-display:none;
-}
-
-.title{
-font-size:32px;
-}
-
-}
-
-</style>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>진소령 — Educator · AI Creator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #ffffff;
+      --bg-soft: #f4fbfc;
+      --bg-section: #eef8f9;
+      --text: #1a2a2e;
+      --muted: #5a6b70;
+      --teal: #0b6b7c;
+      --teal-deep: #085564;
+      --teal-soft: #5eb8c4;
+      --teal-pale: #c8e8ed;
+      --tan: #c4a484;
+      --tan-deep: #a88868;
+      --line: rgba(11, 107, 124, 0.12);
+      --shadow: 0 18px 50px rgba(8, 85, 100, 0.12);
+      --radius: 24px;
+      --max: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Manrope", "Noto Sans KR", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(ellipse 70% 45% at 90% 10%, rgba(94, 184, 196, 0.18), transparent 55%),
+        radial-gradient(ellipse 50% 40% at 0% 80%, rgba(196, 164, 132, 0.12), transparent 50%),
+        var(--bg);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(100% - 48px, var(--max));
+      margin: 0 auto;
+    }
+
+    .title {
+      font-size: clamp(1.9rem, 3.5vw, 2.75rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--teal);
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    section {
+      padding: 96px 0;
+    }
+
+    /* ==========================
+       NAV
+    ========================== */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .nav.is-scrolled {
+      border-color: var(--line);
+      box-shadow: 0 8px 24px rgba(8, 85, 100, 0.06);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 76px;
+    }
+
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      color: var(--teal);
+    }
+
+    .logo-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--teal);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-size: 1.15rem;
+      font-weight: 800;
+      box-shadow: 0 8px 20px rgba(11, 107, 124, 0.28);
+    }
+
+    .logo-text {
+      font-size: 1.15rem;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--tan-deep);
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: color 0.25s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.is-active {
+      color: var(--teal);
+    }
+
+    .nav-links svg {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+    }
+
+    .nav-toggle {
+      display: none;
+      width: 42px;
+      height: 42px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #fff;
+      cursor: pointer;
+    }
+
+    /* ==========================
+       HERO
+    ========================== */
+    .hero {
+      padding: 48px 0 80px;
+      min-height: calc(100vh - 76px);
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .hero-eyebrow {
+      color: var(--teal-soft);
+      font-weight: 600;
+      font-size: 1.05rem;
+      margin-bottom: 14px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.2rem, 4.6vw, 3.6rem);
+      line-height: 1.18;
+      letter-spacing: -0.035em;
+      font-weight: 800;
+      color: var(--teal);
+      margin-bottom: 22px;
+    }
+
+    .hero h1 .brand {
+      display: inline;
+      font-size: inherit;
+      font-weight: inherit;
+      background: none;
+      color: var(--teal);
+      -webkit-text-fill-color: unset;
+    }
+
+    .hero h1 .accent {
+      color: var(--tan);
+    }
+
+    .hero-lead {
+      color: var(--muted);
+      line-height: 1.75;
+      max-width: 480px;
+      margin-bottom: 12px;
+      font-size: 1rem;
+    }
+
+    .see-more {
+      color: #2f7cf6;
+      font-weight: 700;
+      font-size: 0.95rem;
+      display: inline-block;
+      margin-bottom: 32px;
+    }
+
+    .see-more:hover {
+      text-decoration: underline;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 28px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+    }
+
+    .btn-primary {
+      background: var(--teal);
+      color: #fff;
+      box-shadow: 0 12px 28px rgba(11, 107, 124, 0.28);
+    }
+
+    .btn-primary:hover {
+      background: var(--teal-deep);
+      transform: translateY(-2px);
+    }
+
+    .btn-ghost {
+      background: #fff;
+      color: var(--teal);
+      border: 1.5px solid var(--teal);
+    }
+
+    .btn-ghost:hover {
+      background: var(--bg-soft);
+      transform: translateY(-2px);
+    }
+
+    .hero-visual {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      padding: 24px 0 12px 28px;
+    }
+
+    .hero-shape {
+      position: absolute;
+      width: min(100%, 420px);
+      aspect-ratio: 1;
+      background: var(--teal-pale);
+      border-radius: 28px 28px 28px 180px;
+      transform: translate(-28px, 18px);
+      z-index: 0;
+    }
+
+    .hero-photo {
+      position: relative;
+      z-index: 1;
+      width: min(100%, 420px);
+      aspect-ratio: 1;
+      border-radius: 28px 28px 28px 180px;
+      overflow: hidden;
+      background:
+        linear-gradient(160deg, #0b6b7c 0%, #5eb8c4 45%, #c4a484 100%);
+      box-shadow: var(--shadow);
+      display: grid;
+      place-items: center;
+    }
+
+    .hero-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hero-photo-fallback {
+      text-align: center;
+      color: #fff;
+      padding: 24px;
+    }
+
+    .hero-photo-fallback .initial {
+      font-size: 5rem;
+      font-weight: 900;
+      line-height: 1;
+      margin-bottom: 10px;
+      text-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+    }
+
+    .hero-photo-fallback p {
+      font-weight: 600;
+      opacity: 0.92;
+    }
+
+    /* ==========================
+       SHARED CARDS
+    ========================== */
+    .card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: 0 10px 30px rgba(8, 85, 100, 0.06);
+      transition: transform 0.45s ease, box-shadow 0.45s ease, border-color 0.45s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-12px);
+      box-shadow: var(--shadow);
+      border-color: rgba(11, 107, 124, 0.28);
+    }
+
+    .section-alt {
+      background: linear-gradient(180deg, var(--bg-soft), #fff 40%, var(--bg-section));
+    }
+
+    .section-intro {
+      text-align: center;
+      max-width: 560px;
+      margin: -24px auto 48px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* ==========================
+       JOURNEY
+    ========================== */
+    .stages {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .stage-card {
+      padding: 36px 28px;
+    }
+
+    .stage-num {
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--teal-soft);
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    .stage-card h3 {
+      font-size: 1.45rem;
+      color: var(--teal);
+      margin-bottom: 12px;
+    }
+
+    .stage-card[data-stage="ai"] h3 {
+      color: var(--tan-deep);
+    }
+
+    .stage-card p {
+      color: var(--muted);
+      line-height: 1.75;
+      font-size: 0.96rem;
+    }
+
+    /* ==========================
+       EDUCATION
+    ========================== */
+    .education-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+    }
+
+    .edu-card {
+      padding: 36px 26px;
+    }
+
+    .icon {
+      font-size: 2.4rem;
+      margin-bottom: 16px;
+      line-height: 1;
+    }
+
+    .edu-card h3 {
+      font-size: 1.3rem;
+      color: var(--teal);
+      margin-bottom: 16px;
+    }
+
+    .edu-card p {
+      line-height: 1.9;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    /* ==========================
+       SCHOOL TIMELINE
+    ========================== */
+    .timeline-box {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .timeline-box > div {
+      padding: 36px 30px;
+      border-left: 5px solid var(--teal);
+    }
+
+    .timeline-box h3 {
+      font-size: 2.2rem;
+      color: var(--tan);
+      margin-bottom: 14px;
+      font-weight: 800;
+    }
+
+    .timeline-box p {
+      line-height: 1.85;
+      color: var(--muted);
+    }
+
+    /* ==========================
+       GALLERY
+    ========================== */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .art-card {
+      overflow: hidden;
+      padding: 0;
+    }
+
+    .art-image {
+      height: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: #fff;
+    }
+
+    .gradient-one {
+      background: linear-gradient(135deg, #0b6b7c, #5eb8c4);
+    }
+
+    .gradient-two {
+      background: linear-gradient(135deg, #5eb8c4, #c4a484);
+    }
+
+    .gradient-three {
+      background: linear-gradient(135deg, #c4a484, #0b6b7c);
+    }
+
+    .art-card h3 {
+      padding: 22px 22px 8px;
+      font-size: 1.25rem;
+      color: var(--teal);
+    }
+
+    .art-card p {
+      padding: 0 22px 26px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    /* ==========================
+       BOOK
+    ========================== */
+    .book-card {
+      padding: 72px 48px;
+      text-align: center;
+      border-radius: 36px;
+      background: linear-gradient(135deg, #0b6b7c 0%, #1a8a9c 50%, #c4a484 130%);
+      color: #fff;
+      box-shadow: 0 28px 70px rgba(11, 107, 124, 0.28);
+    }
+
+    .book-year {
+      font-size: clamp(3rem, 7vw, 4.5rem);
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .book-card h2 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      margin-top: 8px;
+      font-weight: 800;
+    }
+
+    .book-card p {
+      font-size: 1.15rem;
+      margin-top: 18px;
+      line-height: 1.7;
+      opacity: 0.95;
+    }
+
+    /* ==========================
+       FUTURE + COUNTERS
+    ========================== */
+    .counters {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-bottom: 48px;
+    }
+
+    .counter-item {
+      text-align: center;
+      padding: 32px 18px;
+    }
+
+    .counter-item .num {
+      font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+      font-weight: 800;
+      color: var(--teal);
+      line-height: 1.1;
+    }
+
+    .counter-item .num span {
+      font-size: 0.55em;
+      vertical-align: super;
+    }
+
+    .counter-item .label {
+      margin-top: 8px;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .future-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .future-card {
+      padding: 36px 28px;
+    }
+
+    .future-card .tag {
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--tan-deep);
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    .future-card h3 {
+      font-size: 1.35rem;
+      color: var(--teal);
+      margin-bottom: 12px;
+    }
+
+    .future-card p {
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    /* ==========================
+       CONTACT + FOOTER
+    ========================== */
+    .contact-box {
+      text-align: center;
+      padding: 64px 40px;
+      border-radius: 32px;
+      background: #fff;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .contact-box h2 {
+      font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+      color: var(--teal);
+      margin-bottom: 12px;
+    }
+
+    .contact-box > p {
+      color: var(--muted);
+      margin-bottom: 24px;
+      line-height: 1.7;
+    }
+
+    .email-link {
+      font-size: clamp(1.1rem, 2.4vw, 1.45rem);
+      font-weight: 800;
+      color: var(--teal);
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.25s ease, color 0.25s ease;
+    }
+
+    .email-link:hover {
+      color: var(--teal-deep);
+      border-color: var(--teal-soft);
+    }
+
+    footer {
+      padding: 36px 0 100px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.92rem;
+      border-top: 1px solid var(--line);
+    }
+
+    footer strong {
+      color: var(--teal);
+    }
+
+    /* ==========================
+       TOP BUTTON
+    ========================== */
+    .top-btn {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      z-index: 50;
+      width: 52px;
+      height: 52px;
+      border: 1.5px solid var(--teal);
+      border-radius: 50%;
+      background: #fff;
+      color: var(--teal);
+      font-family: inherit;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      box-shadow: 0 10px 28px rgba(11, 107, 124, 0.18);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(12px);
+      transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+    }
+
+    .top-btn.is-visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .top-btn:hover {
+      background: var(--teal);
+      color: #fff;
+    }
+
+    /* ==========================
+       RESPONSIVE
+    ========================== */
+    @media (max-width: 900px) {
+      .nav-toggle {
+        display: grid;
+        place-items: center;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 76px;
+        left: 24px;
+        right: 24px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        padding: 8px;
+        box-shadow: var(--shadow);
+      }
+
+      .nav-links.is-open {
+        display: flex;
+      }
+
+      .nav-links li {
+        width: 100%;
+      }
+
+      .nav-links a {
+        width: 100%;
+        padding: 14px 16px;
+        border-radius: 12px;
+      }
+
+      .nav-links a:hover {
+        background: var(--bg-soft);
+      }
+
+      .hero {
+        padding-top: 28px;
+        min-height: auto;
+      }
+
+      .hero-grid,
+      .stages,
+      .education-grid,
+      .timeline-box,
+      .gallery,
+      .future-grid,
+      .counters {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-visual {
+        order: -1;
+        padding-left: 16px;
+      }
+
+      .hero-shape {
+        transform: translate(-16px, 12px);
+      }
+
+      .book-card {
+        padding: 48px 28px;
+      }
+
+      section {
+        padding: 72px 0;
+      }
+    }
+  </style>
 </head>
-
-
 <body>
-
-
-<header>
-
-<div class="logo">
-AI FUTURE EDUCATOR
-</div>
-
-
-<nav>
-
-<a href="#about">About</a>
-<a href="#career">Career</a>
-<a href="#education">Education</a>
-<a href="#aiart">AI Art</a>
-<a href="#contact">Contact</a>
-
-</nav>
-
-</header>
-
-
-
-<!-- HERO -->
-
-<section class="hero">
-
-
-<div class="container">
-
-
-<h1>
-AI 시대의<br>
-<span>창의적 미래교육자</span>
-</h1>
-
-
-<p>
-코딩으로 생각하고<br>
-AI로 창작하는 교육 전문가
-</p>
-
-
-<div class="badges">
-
-<div class="badge">
-컴퓨터 전공
-</div>
-
-<div class="badge">
-정보처리기사
-</div>
-
-<div class="badge">
-정교사 2급
-</div>
-
-<div class="badge">
-20년 교육 경험
-</div>
-
-
-</div>
-
-
-<a class="btn" href="#career">
-나의 여정 보기
-</a>
-
-
-</div>
-
-
-</section>
-
-
-
-<!-- ABOUT -->
-
-
-<section id="about">
-
-
-<div class="container">
-
-
-<h2 class="title">
-About Me
-</h2>
-
-
-<div class="about">
-
-
-컴퓨터 전공자로 개발 현장에서 시작하여<br>
-
-게임 스타트업과 출판 스타트업 프로그래머 경험을 쌓았습니다.<br><br>
-
-
-이후 20년간 아이들과 함께 성장하며<br>
-
-코딩, 인공지능, 디지털 창작 교육을 실천하는<br>
-
-AI·SW 미래교육 전문가로 활동하고 있습니다.
-
-
-</div>
-
-
-</div>
-
-
-</section>
-
-
-
-
-<!-- CAREER -->
-
-<section id="career">
-
-
-<div class="container">
-
-
-<h2 class="title">
-My Journey
-</h2>
-
-
-
-<div class="timeline">
-
-
-<div class="item">
-
-<h3>2000 - 2003</h3>
-
-<p>
-게임 스타트업 / 출판 스타트업 프로그래머<br>
-소프트웨어 개발 및 디지털 콘텐츠 경험
-</p>
-
-</div>
-
-
-
-<div class="item">
-
-<h3>2021</h3>
-
-<p>
-다양한 교육 활동 보조강사 시작
-</p>
-
-</div>
-
-
-
-
-<div class="item">
-
-<h3>2022</h3>
-
-<p>
-서초여성가족플라자 잠원점<br>
-AI·SW 강사 과정 수료 및 활동
-</p>
-
-</div>
-
-
-
-<div class="item">
-
-<h3>2024 - 2026</h3>
-
-<p>
-서이초 / 방현초 / 왕북초 / 서초초<br>
-코딩·피지컬 컴퓨팅·인공지능 교육
-</p>
-
-</div>
-
-
-<div class="item">
-
-<h3>2026</h3>
-
-<p>
-국립중앙도서관 AI 리터러시 아카데미<br>
-AI Art Class 수료<br>
-AI 디지털 콘텐츠 강사 활동
-</p>
-
-</div>
-
-
-</div>
-
-
-</div>
-
-
-</section>
-
-
-
-
-<!-- EDUCATION -->
-
-
-<section id="education">
-
-
-<div class="container">
-
-
-<h2 class="title">
-Education Expertise
-</h2>
-
-
-<div class="cards">
-
-
-<div class="card">
-
-<h3>
-Coding
-</h3>
-
-<p>
-엔트리<br>
-스크래치<br>
-컴퓨팅 사고력<br>
-프로젝트 코딩
-</p>
-
-</div>
-
-
-<div class="card">
-
-<h3>
-AI Literacy
-</h3>
-
-<p>
-생성형 AI<br>
-프롬프트 활용<br>
-AI 윤리<br>
-AI 창작 프로젝트
-</p>
-
-</div>
-
-
-
-<div class="card">
-
-<h3>
-Physical Computing
-</h3>
-
-<p>
-센서 활용<br>
-메이커 교육<br>
-피지컬 코딩
-</p>
-
-</div>
-
-
-
-<div class="card">
-
-<h3>
-AI Art
-</h3>
-
-<p>
-AI 그림 제작<br>
-Canva 디자인<br>
-디지털 콘텐츠 제작
-</p>
-
-</div>
-
-
-</div>
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-<section id="aiart">
-
-
-<div class="container">
-
-
-<div class="book">
-
-
-<h2>
-2026 AI 콘텐츠 작가
-</h2>
-
-
-<p>
-AI와 함께 만드는 첫 번째 책 출간<br>
-배우는 사람에서 만드는 사람으로 성장하다
-</p>
-
-
-</div>
-
-
-</div>
-
-
-</section>
-
-
-
-
-<section id="contact">
-
-
-<div class="container">
-
-
-<h2 class="title">
-Contact
-</h2>
-
-
-<div class="school">
-
-<p>
-학교 AI·SW 교육<br>
-코딩 체험 프로그램<br>
-AI 리터러시 교육<br>
-디지털 창작 프로젝트
-</p>
-
-
-</div>
-
-
-</div>
-
-
-</section>
-
-
-
-
-<footer>
-
-AI FUTURE EDUCATOR<br><br>
-
-Coding · AI · Creative Education
-
-</footer>
-
-
-
+  <nav class="nav" id="nav">
+    <div class="container nav-inner">
+      <a class="logo" href="#top">
+        <span class="logo-mark">진</span>
+        <span class="logo-text">진소령</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기" type="button">
+        <svg width="18" height="14" viewBox="0 0 18 14" fill="none" aria-hidden="true">
+          <path d="M1 1h16M1 7h16M1 13h16" stroke="#0b6b7c" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li>
+          <a href="#top" class="is-active">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 10.5 12 4l8 6.5V20a1 1 0 0 1-1 1h-5v-6H10v6H5a1 1 0 0 1-1-1v-9.5z"/></svg>
+            Home
+          </a>
+        </li>
+        <li>
+          <a href="#journey">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="3.5"/><path d="M5 19.5c1.5-3.5 4-5 7-5s5.5 1.5 7 5"/></svg>
+            About Me
+          </a>
+        </li>
+        <li>
+          <a href="#contact">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6.5 4.5h3l1.5 4-2 1.2a12 12 0 0 0 5.3 5.3l1.2-2 4 1.5v3A15 15 0 0 1 6.5 4.5z"/></svg>
+            Contact Me
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero" id="top">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <p class="hero-eyebrow">Welcome to my site</p>
+        <h1>
+          Hi, I’m <span class="brand">진소령</span>, an<br />
+          Educator &amp; <span class="accent">AI Creator.</span>
+        </h1>
+        <p class="hero-lead">
+          코드를 배우고, 교실에서 가르치며, 생성형 AI로 창작합니다.
+          Developer에서 Educator, AI Creator로 이어지는 교육 포트폴리오입니다.
+        </p>
+        <a class="see-more" href="#journey">See More..</a>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#contact">Hire me !</a>
+          <a class="btn btn-ghost" href="#education">See My Project</a>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-shape" aria-hidden="true"></div>
+        <div class="hero-photo">
+          <img
+            src="profile.png"
+            alt="진소령 프로필"
+          />
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="journey">
+    <div class="container">
+      <h2 class="title">The Journey</h2>
+      <p class="section-intro">
+        세 개의 정체성이 하나의 스토리로 이어집니다.<br />
+        Developer → Educator → AI Creator
+      </p>
+      <div class="stages">
+        <article class="stage-card card" data-stage="dev">
+          <div class="stage-num">Stage 01</div>
+          <h3>Developer</h3>
+          <p>
+            논리적 사고와 문제 해결로 시스템을 설계합니다.
+            코딩은 언어가 아니라 세상을 구조화하는 방법입니다.
+          </p>
+        </article>
+        <article class="stage-card card" data-stage="edu">
+          <div class="stage-num">Stage 02</div>
+          <h3>Educator</h3>
+          <p>
+            학교 현장에서 컴퓨팅 사고력과 AI 리터러시를 전합니다.
+            배우는 순간이 만드는 순간으로 이어지도록.
+          </p>
+        </article>
+        <article class="stage-card card" data-stage="ai">
+          <div class="stage-num">Stage 03</div>
+          <h3>AI Creator</h3>
+          <p>
+            생성형 AI로 이미지·콘텐츠·책을 창작합니다.
+            기술은 도구이고, 이야기는 사람이 씁니다.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="education" class="section-alt">
+    <div class="container">
+      <h2 class="title">Education Lab</h2>
+      <div class="education-grid">
+        <div class="edu-card card">
+          <div class="icon">💻</div>
+          <h3>Coding Lab</h3>
+          <p>
+            엔트리<br />
+            스크래치<br />
+            Python 기초<br />
+            컴퓨팅 사고력<br />
+            알고리즘 문제 해결
+          </p>
+        </div>
+        <div class="edu-card card">
+          <div class="icon">🤖</div>
+          <h3>AI Lab</h3>
+          <p>
+            생성형 AI 활용<br />
+            프롬프트 엔지니어링<br />
+            AI 리터러시<br />
+            AI 윤리 교육
+          </p>
+        </div>
+        <div class="edu-card card">
+          <div class="icon">⚙️</div>
+          <h3>Maker Lab</h3>
+          <p>
+            피지컬 컴퓨팅<br />
+            센서 활용<br />
+            IoT 프로젝트<br />
+            창의 융합 교육
+          </p>
+        </div>
+        <div class="edu-card card">
+          <div class="icon">🎨</div>
+          <h3>Creator Lab</h3>
+          <p>
+            AI 이미지 생성<br />
+            Canva 디자인<br />
+            디지털 콘텐츠 제작<br />
+            AI 출판 프로젝트
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="schools">
+    <div class="container">
+      <h2 class="title">School Portfolio</h2>
+      <div class="timeline-box">
+        <div class="card">
+          <h3>2024</h3>
+          <p>서이초 코딩교육</p>
+        </div>
+        <div class="card">
+          <h3>2025</h3>
+          <p>
+            방현초<br />
+            왕북초<br />
+            서초초<br /><br />
+            피지컬 코딩 · 인공지능 교육
+          </p>
+        </div>
+        <div class="card">
+          <h3>2026</h3>
+          <p>
+            왕북초<br />
+            서초초<br /><br />
+            코딩 및 AI 교육
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery" class="section-alt">
+    <div class="container">
+      <h2 class="title">AI Creation Gallery</h2>
+      <div class="gallery">
+        <div class="art-card card">
+          <div class="art-image gradient-one">AI ART</div>
+          <h3>AI 그림 창작</h3>
+          <p>텍스트를 이미지로 표현하는 생성형 AI 아트 프로젝트</p>
+        </div>
+        <div class="art-card card">
+          <div class="art-image gradient-two">DIGITAL</div>
+          <h3>디지털 콘텐츠</h3>
+          <p>AI와 Canva를 활용한 창작 콘텐츠 제작</p>
+        </div>
+        <div class="art-card card">
+          <div class="art-image gradient-three">BOOK</div>
+          <h3>AI 출판 프로젝트</h3>
+          <p>아이디어를 글과 이미지로 완성하는 창작 경험</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="book">
+    <div class="container">
+      <div class="book-card">
+        <div class="book-year">2026</div>
+        <h2>MY FIRST BOOK</h2>
+        <p>
+          배우는 사람에서<br />
+          만드는 사람으로
+        </p>
+        <p>
+          AI와 함께 성장하며 만든<br />
+          인생 첫 책 출간
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="future" class="section-alt">
+    <div class="container">
+      <h2 class="title">Future Education Lab</h2>
+      <div class="counters" id="counters">
+        <div class="counter-item card">
+          <div class="num"><span data-count="20">0</span><span>+</span></div>
+          <div class="label">Years of Growth</div>
+        </div>
+        <div class="counter-item card">
+          <div class="num" data-count="4">0</div>
+          <div class="label">Schools Connected</div>
+        </div>
+        <div class="counter-item card">
+          <div class="num" data-count="4">0</div>
+          <div class="label">Education Labs</div>
+        </div>
+      </div>
+      <div class="future-grid">
+        <article class="future-card card">
+          <div class="tag">Core 01</div>
+          <h3>AI 리터러시 교육</h3>
+          <p>
+            생성형 AI를 읽고, 평가하고, 책임감 있게 쓰는 힘을 기릅니다.
+            프롬프트부터 윤리까지, 교실에서 바로 쓰는 리터러시.
+          </p>
+        </article>
+        <article class="future-card card">
+          <div class="tag">Core 02</div>
+          <h3>AI 창작교육</h3>
+          <p>
+            이미지·스토리·디지털 콘텐츠로 생각을 표현합니다.
+            AI는 보조하고, 창작은 학생이 완성합니다.
+          </p>
+        </article>
+        <article class="future-card card">
+          <div class="tag">Core 03</div>
+          <h3>초중등 코딩교육</h3>
+          <p>
+            엔트리·스크래치·Python으로 컴퓨팅 사고력을 키웁니다.
+            문제 정의부터 알고리즘까지, 단계형 코딩 수업.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="contact-box">
+        <h2>Let’s build the next classroom</h2>
+        <p>
+          AI 리터러시 · 창작교육 · 초중등 코딩에 대한<br />
+          협업과 강의 문의는 아래로 연락해 주세요.
+        </p>
+        <a class="email-link" href="mailto:blanciel1977@gmail.com">
+          blanciel1977@gmail.com
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p><strong>진소령</strong> — Educator · AI Creator</p>
+      <p style="margin-top: 8px;">© 2026 All rights reserved.</p>
+    </div>
+  </footer>
+
+  <button type="button" class="top-btn" id="topBtn" aria-label="맨 위로">TOP</button>
+
+  <script>
+    (function () {
+      const nav = document.getElementById("nav");
+      const navToggle = document.getElementById("navToggle");
+      const navLinks = document.getElementById("navLinks");
+      const topBtn = document.getElementById("topBtn");
+
+      function onScroll() {
+        if (nav) nav.classList.toggle("is-scrolled", window.scrollY > 12);
+        if (topBtn) topBtn.classList.toggle("is-visible", window.scrollY > 400);
+      }
+
+      window.addEventListener("scroll", onScroll, { passive: true });
+      onScroll();
+
+      if (topBtn) {
+        topBtn.addEventListener("click", function () {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      }
+
+      if (navToggle && navLinks) {
+        navToggle.addEventListener("click", function () {
+          navLinks.classList.toggle("is-open");
+        });
+        navLinks.querySelectorAll("a").forEach(function (link) {
+          link.addEventListener("click", function () {
+            navLinks.classList.remove("is-open");
+          });
+        });
+      }
+
+      /* Count-up */
+      const counterRoot = document.getElementById("counters");
+      let counted = false;
+
+      function animateCount(el, target, duration) {
+        const start = performance.now();
+        function tick(now) {
+          const p = Math.min(1, (now - start) / duration);
+          const eased = 1 - Math.pow(1 - p, 3);
+          el.textContent = String(Math.round(target * eased));
+          if (p < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+      }
+
+      function runCounters() {
+        if (counted || !counterRoot) return;
+        counted = true;
+        counterRoot.querySelectorAll("[data-count]").forEach(function (el) {
+          const target = Number(el.getAttribute("data-count")) || 0;
+          animateCount(el, target, 1400);
+        });
+      }
+
+      if (counterRoot && "IntersectionObserver" in window) {
+        const io = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                runCounters();
+                io.disconnect();
+              }
+            });
+          },
+          { threshold: 0.35 }
+        );
+        io.observe(counterRoot);
+      } else {
+        runCounters();
+      }
+    })();
+  </script>
 </body>
 </html>
