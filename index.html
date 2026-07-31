@@ -300,6 +300,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: center 18%;
       display: block;
     }
 
@@ -679,17 +680,27 @@
        RESPONSIVE
     ========================== */
     @media (max-width: 900px) {
+      .container {
+        width: min(100% - 32px, var(--max));
+      }
+
+      .nav-inner {
+        min-height: 64px;
+      }
+
       .nav-toggle {
         display: grid;
         place-items: center;
+        width: 44px;
+        height: 44px;
       }
 
       .nav-links {
         display: none;
         position: absolute;
-        top: 76px;
-        left: 24px;
-        right: 24px;
+        top: 64px;
+        left: 16px;
+        right: 16px;
         flex-direction: column;
         align-items: flex-start;
         gap: 0;
@@ -710,6 +721,7 @@
 
       .nav-links a {
         width: 100%;
+        min-height: 48px;
         padding: 14px 16px;
         border-radius: 12px;
       }
@@ -718,9 +730,17 @@
         background: var(--bg-soft);
       }
 
+      .br-desktop {
+        display: none;
+      }
+
       .hero {
-        padding-top: 28px;
+        padding: 24px 0 48px;
         min-height: auto;
+      }
+
+      .hero-grid {
+        gap: 28px;
       }
 
       .hero-grid,
@@ -733,21 +753,288 @@
         grid-template-columns: 1fr;
       }
 
+      .hero-eyebrow {
+        font-size: 0.95rem;
+        margin-bottom: 10px;
+      }
+
+      .hero h1 {
+        font-size: clamp(1.7rem, 7vw, 2.35rem);
+        line-height: 1.28;
+        margin-bottom: 16px;
+      }
+
+      .hero-lead {
+        font-size: 1rem;
+        line-height: 1.8;
+        max-width: none;
+        margin-bottom: 10px;
+      }
+
+      .see-more {
+        margin-bottom: 22px;
+      }
+
+      .cta-row {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .cta-row .btn {
+        width: 100%;
+        min-height: 50px;
+      }
+
       .hero-visual {
         order: -1;
-        padding-left: 16px;
+        padding: 8px 0 4px 12px;
+        justify-content: center;
+      }
+
+      .hero-shape,
+      .hero-photo {
+        width: min(100%, 300px);
       }
 
       .hero-shape {
-        transform: translate(-16px, 12px);
+        transform: translate(-14px, 10px);
+        border-radius: 24px 24px 24px 120px;
       }
 
-      .book-card {
-        padding: 48px 28px;
+      .hero-photo {
+        border-radius: 24px 24px 24px 120px;
+      }
+
+      .title {
+        font-size: clamp(1.55rem, 6.5vw, 2.1rem);
+        margin-bottom: 28px;
+        line-height: 1.25;
+      }
+
+      .section-intro {
+        margin: -12px auto 32px;
+        font-size: 0.98rem;
+        line-height: 1.75;
+        padding: 0 4px;
       }
 
       section {
-        padding: 72px 0;
+        padding: 56px 0;
+      }
+
+      .stage-card,
+      .edu-card,
+      .future-card {
+        padding: 28px 22px;
+      }
+
+      .stage-card h3,
+      .edu-card h3,
+      .future-card h3,
+      .art-card h3 {
+        font-size: 1.25rem;
+      }
+
+      .stage-card p,
+      .edu-card p,
+      .future-card p,
+      .art-card p,
+      .timeline-box p {
+        font-size: 0.98rem;
+        line-height: 1.8;
+      }
+
+      .timeline-box > div {
+        padding: 28px 22px;
+      }
+
+      .timeline-box h3 {
+        font-size: 1.85rem;
+      }
+
+      .art-image {
+        height: 180px;
+        font-size: 1.35rem;
+      }
+
+      .book-card {
+        padding: 40px 24px;
+        border-radius: 28px;
+      }
+
+      .book-year {
+        font-size: clamp(2.4rem, 12vw, 3.4rem);
+      }
+
+      .book-card h2 {
+        font-size: clamp(1.5rem, 7vw, 2rem);
+      }
+
+      .book-card p {
+        font-size: 1.05rem;
+        line-height: 1.7;
+      }
+
+      .counter-item {
+        padding: 26px 16px;
+      }
+
+      .counter-item .num {
+        font-size: clamp(2rem, 9vw, 2.6rem);
+      }
+
+      .contact-box {
+        padding: 40px 22px;
+        border-radius: 24px;
+      }
+
+      .contact-box h2 {
+        font-size: clamp(1.4rem, 6vw, 1.9rem);
+        line-height: 1.3;
+      }
+
+      .contact-box > p {
+        font-size: 0.98rem;
+        line-height: 1.75;
+      }
+
+      .email-link {
+        display: inline-block;
+        max-width: 100%;
+        font-size: clamp(0.95rem, 4.2vw, 1.2rem);
+        word-break: break-all;
+        line-height: 1.4;
+      }
+
+      .top-btn {
+        right: max(16px, env(safe-area-inset-right));
+        bottom: max(16px, env(safe-area-inset-bottom));
+        width: 48px;
+        height: 48px;
+        font-size: 0.68rem;
+      }
+
+      footer {
+        padding: 28px 0 96px;
+        font-size: 0.88rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        width: min(100% - 28px, var(--max));
+      }
+
+      .logo-text {
+        font-size: 1.05rem;
+      }
+
+      .logo-mark {
+        width: 38px;
+        height: 38px;
+        font-size: 1.05rem;
+      }
+
+      .hero {
+        padding: 18px 0 40px;
+      }
+
+      .hero-grid {
+        gap: 22px;
+      }
+
+      .hero h1 {
+        font-size: 1.65rem;
+        letter-spacing: -0.03em;
+      }
+
+      .hero-lead {
+        font-size: 0.96rem;
+      }
+
+      .hero-visual {
+        padding: 4px 0 0 8px;
+      }
+
+      .hero-shape,
+      .hero-photo {
+        width: min(100%, 240px);
+        border-radius: 20px 20px 20px 96px;
+      }
+
+      .hero-shape {
+        transform: translate(-10px, 8px);
+      }
+
+      .title {
+        font-size: 1.5rem;
+        margin-bottom: 22px;
+      }
+
+      section {
+        padding: 48px 0;
+      }
+
+      .stage-card,
+      .edu-card,
+      .future-card,
+      .counter-item {
+        padding: 24px 18px;
+      }
+
+      .timeline-box > div {
+        padding: 24px 18px;
+      }
+
+      .timeline-box h3 {
+        font-size: 1.65rem;
+      }
+
+      .icon {
+        font-size: 2rem;
+        margin-bottom: 12px;
+      }
+
+      .art-image {
+        height: 160px;
+      }
+
+      .art-card h3 {
+        padding: 18px 18px 6px;
+      }
+
+      .art-card p {
+        padding: 0 18px 20px;
+      }
+
+      .book-card {
+        padding: 32px 18px;
+      }
+
+      .book-year {
+        font-size: 2.3rem;
+      }
+
+      .book-card h2 {
+        font-size: 1.45rem;
+      }
+
+      .book-card p {
+        font-size: 0.98rem;
+        margin-top: 14px;
+      }
+
+      .counter-item .num {
+        font-size: 2rem;
+      }
+
+      .contact-box {
+        padding: 32px 18px;
+      }
+
+      .top-btn {
+        width: 44px;
+        height: 44px;
       }
     }
   </style>
@@ -792,7 +1079,7 @@
       <div class="hero-copy">
         <p class="hero-eyebrow">Welcome to my site</p>
         <h1>
-          Hi, I’m <span class="brand">진소령</span>, an<br />
+          Hi, I’m <span class="brand">진소령</span>, an<br class="br-desktop" />
           Educator &amp; <span class="accent">AI Creator.</span>
         </h1>
         <p class="hero-lead">
