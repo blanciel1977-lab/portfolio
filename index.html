@@ -677,37 +677,37 @@
     }
 
     /* ==========================
-       RESPONSIVE
+       RESPONSIVE — compact height, keep all content
     ========================== */
     @media (max-width: 900px) {
       .container {
-        width: min(100% - 32px, var(--max));
+        width: min(100% - 28px, var(--max));
       }
 
       .nav-inner {
-        min-height: 64px;
+        min-height: 56px;
       }
 
       .nav-toggle {
         display: grid;
         place-items: center;
-        width: 44px;
-        height: 44px;
+        width: 42px;
+        height: 42px;
       }
 
       .nav-links {
         display: none;
         position: absolute;
-        top: 64px;
-        left: 16px;
-        right: 16px;
+        top: 56px;
+        left: 14px;
+        right: 14px;
         flex-direction: column;
         align-items: flex-start;
         gap: 0;
         background: #fff;
         border: 1px solid var(--line);
-        border-radius: 16px;
-        padding: 8px;
+        border-radius: 14px;
+        padding: 6px;
         box-shadow: var(--shadow);
       }
 
@@ -721,9 +721,9 @@
 
       .nav-links a {
         width: 100%;
-        min-height: 48px;
-        padding: 14px 16px;
-        border-radius: 12px;
+        min-height: 44px;
+        padding: 12px 14px;
+        border-radius: 10px;
       }
 
       .nav-links a:hover {
@@ -734,105 +734,140 @@
         display: none;
       }
 
+      .card:hover,
+      .edu-card:hover,
+      .art-card:hover,
+      .stage-card:hover,
+      .future-card:hover {
+        transform: none;
+      }
+
+      /* Hero: side-by-side to cut vertical length */
       .hero {
-        padding: 24px 0 48px;
+        padding: 16px 0 28px;
         min-height: auto;
       }
 
       .hero-grid {
-        gap: 28px;
-      }
-
-      .hero-grid,
-      .stages,
-      .education-grid,
-      .timeline-box,
-      .gallery,
-      .future-grid,
-      .counters {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 14px;
+        align-items: center;
       }
 
       .hero-eyebrow {
-        font-size: 0.95rem;
-        margin-bottom: 10px;
+        font-size: 0.85rem;
+        margin-bottom: 6px;
       }
 
       .hero h1 {
-        font-size: clamp(1.7rem, 7vw, 2.35rem);
-        line-height: 1.28;
-        margin-bottom: 16px;
+        font-size: clamp(1.35rem, 4.8vw, 1.85rem);
+        line-height: 1.25;
+        margin-bottom: 8px;
       }
 
       .hero-lead {
-        font-size: 1rem;
-        line-height: 1.8;
+        font-size: 0.9rem;
+        line-height: 1.55;
         max-width: none;
-        margin-bottom: 10px;
+        margin-bottom: 6px;
       }
 
       .see-more {
-        margin-bottom: 22px;
+        margin-bottom: 12px;
+        font-size: 0.88rem;
       }
 
       .cta-row {
-        flex-direction: column;
-        gap: 10px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 8px;
       }
 
       .cta-row .btn {
-        width: 100%;
-        min-height: 50px;
+        flex: 1 1 auto;
+        min-width: 0;
+        min-height: 42px;
+        padding: 0 14px;
+        font-size: 0.88rem;
       }
 
       .hero-visual {
-        order: -1;
-        padding: 8px 0 4px 12px;
-        justify-content: center;
-      }
-
-      .hero-shape,
-      .hero-photo {
-        width: min(100%, 300px);
+        order: 0;
+        padding: 0 0 0 6px;
+        justify-content: flex-end;
       }
 
       .hero-shape {
-        transform: translate(-14px, 10px);
-        border-radius: 24px 24px 24px 120px;
+        display: none;
       }
 
       .hero-photo {
-        border-radius: 24px 24px 24px 120px;
+        width: min(100%, 168px);
+        border-radius: 18px 18px 18px 72px;
+        box-shadow: 0 10px 28px rgba(8, 85, 100, 0.14);
+      }
+
+      /* Sections denser; grids stay multi-column */
+      section {
+        padding: 36px 0;
       }
 
       .title {
-        font-size: clamp(1.55rem, 6.5vw, 2.1rem);
-        margin-bottom: 28px;
-        line-height: 1.25;
+        font-size: clamp(1.35rem, 4.5vw, 1.75rem);
+        margin-bottom: 16px;
+        line-height: 1.2;
       }
 
       .section-intro {
-        margin: -12px auto 32px;
-        font-size: 0.98rem;
-        line-height: 1.75;
-        padding: 0 4px;
+        margin: -4px auto 16px;
+        font-size: 0.88rem;
+        line-height: 1.55;
+        padding: 0;
       }
 
-      section {
-        padding: 56px 0;
+      .stages,
+      .timeline-box,
+      .gallery,
+      .future-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+      }
+
+      .education-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+      }
+
+      .counters {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+        margin-bottom: 16px;
       }
 
       .stage-card,
       .edu-card,
       .future-card {
-        padding: 28px 22px;
+        padding: 14px 12px;
+        border-radius: 16px;
+      }
+
+      .stage-num,
+      .future-card .tag {
+        font-size: 0.65rem;
+        margin-bottom: 6px;
       }
 
       .stage-card h3,
       .edu-card h3,
       .future-card h3,
       .art-card h3 {
-        font-size: 1.25rem;
+        font-size: 0.98rem;
+        margin-bottom: 6px;
+      }
+
+      .icon {
+        font-size: 1.5rem;
+        margin-bottom: 6px;
       }
 
       .stage-card p,
@@ -840,201 +875,288 @@
       .future-card p,
       .art-card p,
       .timeline-box p {
-        font-size: 0.98rem;
-        line-height: 1.8;
+        font-size: 0.8rem;
+        line-height: 1.55;
+      }
+
+      .edu-card p {
+        line-height: 1.5;
       }
 
       .timeline-box > div {
-        padding: 28px 22px;
+        padding: 14px 12px;
+        border-radius: 16px;
+        border-left-width: 4px;
       }
 
       .timeline-box h3 {
-        font-size: 1.85rem;
+        font-size: 1.25rem;
+        margin-bottom: 6px;
       }
 
       .art-image {
-        height: 180px;
-        font-size: 1.35rem;
+        height: 96px;
+        font-size: 1rem;
+      }
+
+      .art-card {
+        border-radius: 16px;
+      }
+
+      .art-card h3 {
+        padding: 10px 12px 4px;
+      }
+
+      .art-card p {
+        padding: 0 12px 12px;
       }
 
       .book-card {
-        padding: 40px 24px;
-        border-radius: 28px;
+        padding: 28px 18px;
+        border-radius: 22px;
       }
 
       .book-year {
-        font-size: clamp(2.4rem, 12vw, 3.4rem);
+        font-size: clamp(1.8rem, 8vw, 2.4rem);
       }
 
       .book-card h2 {
-        font-size: clamp(1.5rem, 7vw, 2rem);
+        font-size: clamp(1.25rem, 5vw, 1.6rem);
+        margin-top: 4px;
       }
 
       .book-card p {
-        font-size: 1.05rem;
-        line-height: 1.7;
+        font-size: 0.92rem;
+        margin-top: 10px;
+        line-height: 1.5;
       }
 
       .counter-item {
-        padding: 26px 16px;
+        padding: 12px 8px;
+        border-radius: 14px;
       }
 
       .counter-item .num {
-        font-size: clamp(2rem, 9vw, 2.6rem);
+        font-size: clamp(1.35rem, 5vw, 1.75rem);
+      }
+
+      .counter-item .label {
+        margin-top: 4px;
+        font-size: 0.72rem;
       }
 
       .contact-box {
-        padding: 40px 22px;
-        border-radius: 24px;
+        padding: 28px 18px;
+        border-radius: 20px;
       }
 
       .contact-box h2 {
-        font-size: clamp(1.4rem, 6vw, 1.9rem);
-        line-height: 1.3;
+        font-size: clamp(1.2rem, 4.5vw, 1.55rem);
+        line-height: 1.25;
+        margin-bottom: 8px;
       }
 
       .contact-box > p {
-        font-size: 0.98rem;
-        line-height: 1.75;
+        font-size: 0.88rem;
+        line-height: 1.55;
+        margin-bottom: 14px;
       }
 
       .email-link {
         display: inline-block;
         max-width: 100%;
-        font-size: clamp(0.95rem, 4.2vw, 1.2rem);
+        font-size: clamp(0.88rem, 3.6vw, 1.1rem);
         word-break: break-all;
-        line-height: 1.4;
+        line-height: 1.35;
       }
 
       .top-btn {
-        right: max(16px, env(safe-area-inset-right));
-        bottom: max(16px, env(safe-area-inset-bottom));
-        width: 48px;
-        height: 48px;
-        font-size: 0.68rem;
+        right: max(12px, env(safe-area-inset-right));
+        bottom: max(12px, env(safe-area-inset-bottom));
+        width: 44px;
+        height: 44px;
+        font-size: 0.65rem;
       }
 
       footer {
-        padding: 28px 0 96px;
-        font-size: 0.88rem;
+        padding: 20px 0 72px;
+        font-size: 0.8rem;
       }
     }
 
     @media (max-width: 480px) {
       .container {
-        width: min(100% - 28px, var(--max));
+        width: min(100% - 24px, var(--max));
       }
 
       .logo-text {
-        font-size: 1.05rem;
+        font-size: 1rem;
       }
 
       .logo-mark {
-        width: 38px;
-        height: 38px;
-        font-size: 1.05rem;
+        width: 34px;
+        height: 34px;
+        font-size: 0.95rem;
       }
 
       .hero {
-        padding: 18px 0 40px;
+        padding: 12px 0 22px;
       }
 
       .hero-grid {
-        gap: 22px;
+        grid-template-columns: 1fr 110px;
+        gap: 10px;
       }
 
       .hero h1 {
-        font-size: 1.65rem;
-        letter-spacing: -0.03em;
+        font-size: 1.28rem;
+        letter-spacing: -0.02em;
       }
 
       .hero-lead {
-        font-size: 0.96rem;
+        font-size: 0.84rem;
+        line-height: 1.5;
       }
 
-      .hero-visual {
-        padding: 4px 0 0 8px;
+      .cta-row .btn {
+        min-height: 40px;
+        font-size: 0.82rem;
+        padding: 0 10px;
+        border-radius: 10px;
       }
 
-      .hero-shape,
       .hero-photo {
-        width: min(100%, 240px);
-        border-radius: 20px 20px 20px 96px;
-      }
-
-      .hero-shape {
-        transform: translate(-10px, 8px);
+        width: 110px;
+        border-radius: 14px 14px 14px 48px;
       }
 
       .title {
-        font-size: 1.5rem;
-        margin-bottom: 22px;
+        font-size: 1.25rem;
+        margin-bottom: 12px;
+      }
+
+      .section-intro {
+        font-size: 0.82rem;
+        margin-bottom: 12px;
       }
 
       section {
-        padding: 48px 0;
+        padding: 28px 0;
+      }
+
+      /* Keep multi-col where text still fits; only stack heavy text cards */
+      .stages,
+      .future-grid {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .timeline-box,
+      .gallery {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 6px;
+      }
+
+      .education-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
       }
 
       .stage-card,
       .edu-card,
       .future-card,
-      .counter-item {
-        padding: 24px 18px;
+      .counter-item,
+      .timeline-box > div {
+        padding: 12px 10px;
       }
 
-      .timeline-box > div {
-        padding: 24px 18px;
+      .stage-card h3,
+      .edu-card h3,
+      .future-card h3 {
+        font-size: 0.95rem;
+      }
+
+      .stage-card p,
+      .edu-card p,
+      .future-card p,
+      .timeline-box p,
+      .art-card p {
+        font-size: 0.78rem;
+        line-height: 1.5;
       }
 
       .timeline-box h3 {
-        font-size: 1.65rem;
+        font-size: 1.1rem;
       }
 
       .icon {
-        font-size: 2rem;
-        margin-bottom: 12px;
+        font-size: 1.35rem;
+        margin-bottom: 4px;
       }
 
       .art-image {
-        height: 160px;
+        height: 88px;
+        font-size: 0.92rem;
       }
 
       .art-card h3 {
-        padding: 18px 18px 6px;
+        padding: 8px 10px 2px;
+        font-size: 0.92rem;
       }
 
       .art-card p {
-        padding: 0 18px 20px;
+        padding: 0 10px 10px;
       }
 
       .book-card {
-        padding: 32px 18px;
+        padding: 22px 14px;
       }
 
       .book-year {
-        font-size: 2.3rem;
+        font-size: 1.7rem;
       }
 
       .book-card h2 {
-        font-size: 1.45rem;
+        font-size: 1.2rem;
       }
 
       .book-card p {
-        font-size: 0.98rem;
-        margin-top: 14px;
+        font-size: 0.86rem;
+        margin-top: 8px;
+      }
+
+      .counters {
+        gap: 6px;
+        margin-bottom: 12px;
       }
 
       .counter-item .num {
-        font-size: 2rem;
+        font-size: 1.25rem;
+      }
+
+      .counter-item .label {
+        font-size: 0.65rem;
       }
 
       .contact-box {
-        padding: 32px 18px;
+        padding: 22px 14px;
+      }
+
+      .contact-box h2 {
+        font-size: 1.15rem;
+      }
+
+      .contact-box > p {
+        font-size: 0.84rem;
       }
 
       .top-btn {
-        width: 44px;
-        height: 44px;
+        width: 42px;
+        height: 42px;
+      }
+
+      footer {
+        padding: 16px 0 64px;
       }
     }
   </style>
