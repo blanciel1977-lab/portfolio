@@ -128,6 +128,33 @@
       transition: color 0.2s ease;
     }
     .nav-links a:hover { color: var(--teal); }
+    .nav-actions {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .nav-dashboard {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--teal);
+      display: inline-grid;
+      place-items: center;
+      transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+      flex-shrink: 0;
+    }
+    .nav-dashboard:hover {
+      background: var(--bg-soft);
+      border-color: rgba(11, 107, 124, 0.35);
+      color: var(--teal-deep);
+      box-shadow: 0 8px 20px rgba(8, 85, 100, 0.12);
+    }
+    .nav-dashboard svg {
+      width: 20px;
+      height: 20px;
+    }
     .nav-toggle {
       display: none;
       border: 1px solid var(--line);
@@ -512,7 +539,6 @@
         <span class="logo-mark">진</span>
         <span class="logo-text">진소령</span>
       </a>
-      <button type="button" class="nav-toggle" id="navToggle" aria-label="메뉴">Menu</button>
       <ul class="nav-links" id="navLinks">
         <li><a href="#top">Home</a></li>
         <li><a href="#expertise">Expertise</a></li>
@@ -520,6 +546,24 @@
         <li><a href="#credentials">Credentials</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
+      <div class="nav-actions">
+        <a
+          class="nav-dashboard"
+          href="https://blanciel1977-lab.github.io/dashboard/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Dashboard로 이동"
+          title="Dashboard"
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="3" width="7" height="9" rx="1.5"/>
+            <rect x="14" y="3" width="7" height="5" rx="1.5"/>
+            <rect x="14" y="12" width="7" height="9" rx="1.5"/>
+            <rect x="3" y="16" width="7" height="5" rx="1.5"/>
+          </svg>
+        </a>
+        <button type="button" class="nav-toggle" id="navToggle" aria-label="메뉴">Menu</button>
+      </div>
     </div>
   </nav>
 
